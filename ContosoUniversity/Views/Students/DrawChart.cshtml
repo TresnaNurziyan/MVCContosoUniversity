@@ -1,0 +1,24 @@
+﻿@model ContosoUniversity.Models.Student
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<h2>DChart</h2>
+<body>
+    @{
+        var title = ViewBag.Title;
+        var credits = ViewBag.Credits;
+
+        var chart = new Chart(width: 800, height: 400)
+            .AddTitle("Grades")
+            .AddSeries(
+            chartType: "Bar",
+            name: "Grades",
+            xValue: title, 
+            yValues: credits
+            )
+            .Write();
+    }
+
+</body>
